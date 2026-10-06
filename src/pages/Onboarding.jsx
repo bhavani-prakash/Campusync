@@ -56,7 +56,9 @@ const Onboarding = () => {
       });
 
       if (res.success) {
-        updateLocalProfile(res.data);
+        const profileData = res.data.profile || res.data;
+        const userData = res.data.user || null;
+        updateLocalProfile(profileData, userData);
         navigate('/home', { replace: true });
       }
     } catch (err) {

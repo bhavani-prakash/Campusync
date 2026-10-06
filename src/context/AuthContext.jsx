@@ -89,9 +89,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Profile & User state updater
-  const updateLocalProfile = (updatedProfile) => {
-    setProfile(updatedProfile);
-    setUser((prev) => (prev ? { ...prev, isOnboarded: true } : prev));
+  const updateLocalProfile = (profileData, userData) => {
+    if (profileData) setProfile(profileData);
+    if (userData) {
+      setUser(userData);
+    } else {
+      setUser((prev) => (prev ? { ...prev, isOnboarded: true } : prev));
+    }
   };
 
   return (

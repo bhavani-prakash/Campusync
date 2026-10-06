@@ -6,7 +6,7 @@ import Avatar from '../components/Avatar';
 import ChatMessage from '../components/ChatMessage';
 import IcebreakerModal from '../components/IcebreakerModal';
 import EmptyState from '../components/EmptyState';
-import { Send, Sparkles, MessageSquare, ArrowLeft, Circle, CheckCheck, Trash2, ShieldAlert } from 'lucide-react';
+import { Send, Sparkles, MessageSquare, ArrowLeft, Circle, CheckCheck, Trash2, ShieldAlert, Clock } from 'lucide-react';
 
 const Messages = () => {
   const { user, profile } = useAuth();
@@ -290,6 +290,12 @@ const Messages = () => {
                 <Sparkles className="w-3.5 h-3.5 text-brand-400" />
                 <span>Icebreakers</span>
               </button>
+            </div>
+
+            {/* 24-Hour Expiration Banner */}
+            <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-amber-300 text-[11px] font-medium flex items-center justify-center space-x-2 text-center">
+              <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span>🔒 <strong>Ephemeral Chat:</strong> Messages in CampusSync automatically expire and are deleted after 24 hours for student privacy.</span>
             </div>
 
             {/* Message Stream */}

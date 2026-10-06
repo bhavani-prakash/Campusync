@@ -37,6 +37,11 @@ const Register = () => {
       return;
     }
 
+    if (!email.toLowerCase().trim().endsWith('@mits.ac.in')) {
+      setFormError('Only MITS student email addresses (@mits.ac.in) are permitted to register.');
+      return;
+    }
+
     if (password !== confirmPassword) {
       setFormError('Passwords do not match.');
       return;

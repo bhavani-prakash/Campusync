@@ -55,6 +55,22 @@ const Navbar = () => {
               </NavLink>
             );
           })}
+
+          {user?.role === 'ADMIN' && (
+            <NavLink
+              to="/admin"
+              className={({ isActive }) =>
+                `px-3.5 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition-all ${
+                  isActive
+                    ? 'bg-rose-600/20 text-rose-300 border border-rose-500/30 shadow-glow'
+                    : 'text-rose-400 hover:text-rose-300 hover:bg-rose-500/10'
+                }`
+              }
+            >
+              <ShieldCheck className="w-4 h-4 text-rose-400" />
+              <span>Admin Panel</span>
+            </NavLink>
+          )}
         </nav>
 
         {/* User Profile & Logout */}

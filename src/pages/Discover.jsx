@@ -20,7 +20,7 @@ const Discover = () => {
   const [filterDepartment, setFilterDepartment] = useState('');
   const [filterYear, setFilterYear] = useState('');
   const [filterInterest, setFilterInterest] = useState('');
-  const [showFilters, setShowFilters] = useState(false);
+  const [showFilters, setShowFilters] = useState(true);
 
   // Match Modal state
   const [matchedProfile, setMatchedProfile] = useState(null);
@@ -74,7 +74,10 @@ const Discover = () => {
     setActionLoading(true);
     try {
       await api.post('/passes', { targetUserId });
-      setCurrentIndex((prev) => prev + 1);
+      setCurrentIndex((prev) => {
+        const next = prev + 1;
+        return next >= candidates.length ? 0 : next;
+      });
     } catch (err) {
       console.error('Pass error:', err);
     } finally {

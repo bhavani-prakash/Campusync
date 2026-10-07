@@ -295,7 +295,7 @@ const Messages = () => {
             {/* 24-Hour Expiration Banner */}
             <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2 text-amber-300 text-[11px] font-medium flex items-center justify-center space-x-2 text-center">
               <Clock className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-              <span>🔒 <strong>Ephemeral Chat:</strong> Messages in CampusSync automatically expire and are deleted after 24 hours for student privacy.</span>
+              <span>🔒 <strong>Ephemeral Chat:</strong> Unread messages are kept safe. Messages automatically expire and vanish 24 hours AFTER they are seen.</span>
             </div>
 
             {/* Message Stream */}
